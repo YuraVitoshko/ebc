@@ -2542,13 +2542,18 @@ textarea:focus::placeholder {
   .statistic__big-container {
     flex-direction: column
   }
-  .statistic__item:nth-child(1),
-  .statistic__item:nth-child(2) {
+  .statistic__item:nth-child(1) {
     padding-right: 0;
     border-right: none;
     padding-bottom: 1rem
   }
-  .statistic__item:nth-child(2),
+  .statistic__item:nth-child(2) {
+    padding-right: 0;
+    border-right: none;
+    padding-bottom: 1rem;
+    padding-left: 0;
+    padding-top: 1rem
+  }
   .statistic__item:nth-child(3) {
     padding-left: 0;
     padding-top: 1rem
