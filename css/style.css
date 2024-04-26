@@ -1891,6 +1891,9 @@ textarea:focus::placeholder {
   padding-top: 8rem;
   padding-bottom: 6rem
 }
+.description--padding-top {
+  padding-top: 13.4375rem
+}
 .description__container {
   display: grid;
   grid-template-columns: repeat(2,1fr);
