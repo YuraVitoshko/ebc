@@ -1570,6 +1570,10 @@ textarea:focus::placeholder {
 .header__logo img {
   width: 100%
 }
+.header__social {
+  position: relative;
+  z-index: 5
+}
 .menu__list {
   display: flex;
   flex-wrap: wrap;
@@ -1657,7 +1661,8 @@ textarea:focus::placeholder {
 }
 .select {
   min-width: 0;
-  position: relative
+  position: relative;
+  z-index: 5
 }
 .select__body {
   position: relative
@@ -2664,12 +2669,13 @@ textarea:focus::placeholder {
     content: "";
     position: fixed;
     z-index: 2;
-    top: 0;
+    top: -100%;
     left: 0;
     opacity: 0;
     width: 100%;
     min-height: 5.5rem;
-    transition: opacity .8s
+    transition: opacity .8s;
+    background-color: #fff
   }
   .menu-open .menu__body {
     opacity: 1;
