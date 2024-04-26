@@ -1912,9 +1912,13 @@ textarea:focus::placeholder {
   padding-top: 6rem;
   padding-bottom: 6rem
 }
-.about-us__container {
+.about-us__title:not(:last-child) {
+  margin-bottom: 4rem
+}
+.about-us__items {
   display: grid;
   grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: 1fr;
   gap: 1rem
 }
 .item-about-us {
@@ -2444,6 +2448,99 @@ textarea:focus::placeholder {
   color: #424242;
   line-height: 1.55
 }
+.all-courses {
+  padding-top: 6rem;
+  padding-bottom: 6rem
+}
+.all-courses__container {
+  display: grid;
+  gap: 12rem
+}
+.all-courses__title:not(:last-child) {
+  margin-bottom: 4rem
+}
+.all-courses__items {
+  display: grid;
+  gap: 4rem
+}
+.item-all-courses {
+  border-radius: .75rem;
+  background-color: #f0f5eb;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  -webkit-column-gap: 4rem;
+  -moz-column-gap: 4rem;
+  column-gap: 4rem;
+  position: relative
+}
+.item-all-courses__label {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: #1322ae;
+  text-align: center;
+  padding: .25rem .75rem;
+  font-size: .875rem;
+  font-weight: 500;
+  line-height: 1.42;
+  border-radius: .5rem;
+  border: .0625rem solid #b0b5e4;
+  background-color: #d0d3ef
+}
+.item-all-courses__photo {
+  border-radius: .5rem;
+  overflow: hidden;
+  max-width: 23.6875rem
+}
+.item-all-courses__photo img {
+  width: 100%
+}
+.item-all-courses__title {
+  color: #0a0a0a;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase
+}
+.item-all-courses__title:not(:last-child) {
+  margin-bottom: 1rem
+}
+.item-all-courses__text {
+  display: grid;
+  gap: .625rem;
+  color: #424242;
+  font-size: 1rem;
+  line-height: 1.5
+}
+.item-all-courses__text:not(:last-child) {
+  margin-bottom: 2rem
+}
+.item-all-courses__box {
+  display: grid;
+  row-gap: .5rem
+}
+.item-all-courses__box:not(:last-child) {
+  margin-bottom: 1rem
+}
+.item-all-courses__subtitle {
+  color: #0a0a0a;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5
+}
+.item-all-courses__value {
+  color: #616161;
+  font-size: 1rem;
+  line-height: 1.5
+}
+.item-all-courses__buttons {
+  display: flex;
+  gap: 1rem
+}
+.item-all-courses__buttons:not(:first-child) {
+  margin-top: 2rem
+}
 .swiper {
   overflow: hidden
 }
@@ -2620,7 +2717,7 @@ textarea:focus::placeholder {
     align-content: end;
     padding-bottom: 6.5625rem
   }
-  .about-us__container {
+  .about-us__items {
     grid-template-columns: repeat(2,1fr)
   }
   .statistic__item:nth-child(1),
@@ -2642,6 +2739,12 @@ textarea:focus::placeholder {
   }
   .teachers__photo {
     max-width: 100%
+  }
+  .item-all-courses {
+    -webkit-column-gap: 2rem;
+    -moz-column-gap: 2rem;
+    column-gap: 2rem;
+    grid-template-columns: 1.2fr 1.8
   }
 }
 @media (max-width:47.99875em) {
@@ -2811,23 +2914,13 @@ textarea:focus::placeholder {
   .description__container {
     grid-template-columns: auto
   }
-  .contact__title:not(:last-child) {
-    margin-bottom: 2rem
-  }
   .form-contact__btn {
-    justify-self: center
-  }
-  .closest-groups__title:not(:last-child) {
-    margin-bottom: 2rem
-  }
-  .testmonials__title:not(:last-child) {
-    margin-bottom: 2rem
+    justify-self: center;
+    width: 100%;
+    text-align: center
   }
   .testmonials__buttons {
     justify-content: center
-  }
-  .our-partners__title:not(:last-child) {
-    margin-bottom: 2rem
   }
   .our-partners__link {
     max-width: 9.375rem
@@ -2842,16 +2935,36 @@ textarea:focus::placeholder {
     max-width: 100%;
     order: 1
   }
-  .teachers__title:not(:last-child) {
-    margin-bottom: 2rem
-  }
   .teachers__items {
     row-gap: 2rem
+  }
+  .item-all-courses {
+    grid-template-columns: 1.4fr 1.6fr;
+    padding: 1rem
   }
 }
 @media (max-width:47.99875em) and (any-hover:none) {
   .icon-menu {
     cursor: default
+  }
+}
+@media (max-width:42.5em) {
+  .item-all-courses {
+    grid-template-columns: auto;
+    row-gap: 1rem
+  }
+  .item-all-courses__label {
+    display: none
+  }
+  .item-all-courses__photo {
+    justify-self: center
+  }
+  .item-all-courses__buttons {
+    flex-direction: column
+  }
+  .item-all-courses__button {
+    width: 100%;
+    text-align: center
   }
 }
 @media (max-width:41.875em) {
@@ -2861,7 +2974,7 @@ textarea:focus::placeholder {
   }
 }
 @media (max-width:37.5em) {
-  .about-us__container {
+  .about-us__items {
     grid-template-columns: auto;
     gap: 2rem
   }
