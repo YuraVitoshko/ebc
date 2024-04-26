@@ -2623,11 +2623,13 @@ textarea:focus::placeholder {
   .about-us__container {
     grid-template-columns: repeat(2,1fr)
   }
-  .statistic__item:nth-child(1),
-  .statistic__item:nth-child(2) {
+  .statistic__item:nth-child(1) {
     padding-right: 2rem
   }
-  .statistic__item:nth-child(2),
+  .statistic__item:nth-child(2) {
+    padding-right: 2rem;
+    padding-left: 2rem
+  }
   .statistic__item:nth-child(3) {
     padding-left: 2rem
   }
