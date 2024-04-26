@@ -2542,20 +2542,15 @@ textarea:focus::placeholder {
   .statistic__big-container {
     flex-direction: column
   }
-  .statistic__item:nth-child(1) {
-    padding-right: 0;
+  .statistic__item:nth-child(1),
+  .statistic__item:nth-child(2) {
+    padding-right: 0!important;
     border-right: none;
     padding-bottom: 1rem
   }
-  .statistic__item:nth-child(2) {
-    padding-right: 0;
-    border-right: none;
-    padding-bottom: 1rem;
-    padding-left: 0;
-    padding-top: 1rem
-  }
+  .statistic__item:nth-child(2),
   .statistic__item:nth-child(3) {
-    padding-left: 0;
+    padding-left: 0!important;
     padding-top: 1rem
   }
   .card-closest-groups {
@@ -2618,18 +2613,16 @@ textarea:focus::placeholder {
   }
   .hero__container {
     align-content: end;
-    padding-bottom: 6.25rem
+    padding-bottom: 6.5625rem
   }
   .about-us__container {
     grid-template-columns: repeat(2,1fr)
   }
-  .statistic__item:nth-child(1) {
+  .statistic__item:nth-child(1),
+  .statistic__item:nth-child(2) {
     padding-right: 2rem
   }
-  .statistic__item:nth-child(2) {
-    padding-right: 2rem;
-    padding-left: 2rem
-  }
+  .statistic__item:nth-child(2),
   .statistic__item:nth-child(3) {
     padding-left: 2rem
   }
