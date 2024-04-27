@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:300,regular,500,600,700,italic&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Inter:500,600&display=swap);
 @font-face {
   font-family: icons;
   font-display: swap;
@@ -375,7 +376,7 @@ textarea:focus::placeholder {
   border-bottom: var(--iti-arrow-height) solid var(--iti-arrow-color)
 }
 .iti__dropdown-content {
-  border-radius: 3px;
+  border-radius: 12px;
   background-color: #fff
 }
 .iti--inline-dropdown .iti__dropdown-content {
@@ -393,11 +394,12 @@ textarea:focus::placeholder {
 .iti__search-input {
   width: 100%;
   border-width: 0;
-  border-radius: 3px;
-  padding: 9px 12px
+  border-radius: 12px;
+  padding: 8px 16px
 }
-.iti__search-input + .iti__country-list {
-  border-top: 1px solid var(--iti-border-gray)
+.iti__search-input._form-focus {
+  border: 1px solid #424242;
+  outline: 0
 }
 .iti__country-list {
   list-style: none;
@@ -1527,6 +1529,7 @@ textarea:focus::placeholder {
   background-color: transparent
 }
 .title {
+  font-family: Inter;
   color: #0a0a0a;
   font-weight: 600;
   line-height: 1.2;
@@ -1541,7 +1544,7 @@ textarea:focus::placeholder {
   top: 0;
   left: 0;
   width: 100%;
-  transition: all 1s ease 0s
+  transition: top 1s,opacity 1s
 }
 .header._header-scroll {
   position: fixed;
@@ -1549,7 +1552,7 @@ textarea:focus::placeholder {
   opacity: 0
 }
 .header._header-show {
-  transition: all 1s ease 0s;
+  transition: top 1s,opacity 1s;
   opacity: 1;
   top: 0
 }
@@ -1570,9 +1573,16 @@ textarea:focus::placeholder {
 .header__logo img {
   width: 100%
 }
+.header__box-social {
+  position: relative;
+  z-index: 5
+}
 .header__social {
   position: relative;
   z-index: 5
+}
+.menu__phone {
+  display: none
 }
 .menu__list {
   display: flex;
@@ -1594,23 +1604,15 @@ textarea:focus::placeholder {
   transform: rotate(-180deg)
 }
 .menu__link {
+  padding: .25rem .5rem;
+  border-radius: .5rem;
   color: #616161;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
   text-transform: uppercase;
   position: relative;
-  transition: color .3s
-}
-.menu__link::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  background-color: #7fa941;
-  height: .0625rem;
-  transition: width .3s
+  transition: color .3s,background-color .3s
 }
 .menu__link--sub-menu {
   cursor: pointer;
@@ -1633,22 +1635,26 @@ textarea:focus::placeholder {
   transform: translateX(-40%);
   display: grid;
   justify-content: stretch;
-  gap: 1rem;
-  padding: 1rem;
+  gap: .5rem;
+  padding: .5rem;
   line-height: 1.5;
   border-radius: .75rem;
   visibility: hidden;
   opacity: 0;
-  background-color: #ededed;
-  transition: opacity .3s ease 0s
+  background-color: #f7f7f7;
+  transition: opacity .3s ease 0s;
+  box-shadow: 0 .5rem 1rem 0 rgba(0,0,0,.08)
 }
 .menu__sub-list.active {
   visibility: visible;
   opacity: 1
 }
 .menu__sub-link {
+  width: 100%;
+  padding: .25rem .5rem;
+  border-radius: .5rem;
   white-space: nowrap;
-  transition: color .3s
+  transition: color .3s,background-color .3s
 }
 .social-header {
   display: flex;
@@ -1760,7 +1766,9 @@ textarea:focus::placeholder {
   display: none
 }
 .footer {
-  padding-bottom: 6.5rem
+  padding-bottom: 6.5rem;
+  padding-left: .9375rem;
+  padding-right: .9375rem
 }
 .footer__big-container {
   border-radius: .75rem;
@@ -1787,6 +1795,7 @@ textarea:focus::placeholder {
   row-gap: 1rem
 }
 .footer__title {
+  font-family: Inter;
   color: #0a0a0a;
   font-size: 1.25rem;
   font-weight: 600;
@@ -1830,7 +1839,7 @@ textarea:focus::placeholder {
   font-size: .75rem;
   line-height: 1.42;
   text-align: center;
-  color: #9e9e9e
+  color: #757575
 }
 .social-footer {
   display: flex;
@@ -1840,6 +1849,7 @@ textarea:focus::placeholder {
   column-gap: 2rem
 }
 .social-footer__link {
+  color: #424242;
   font-size: 1.5rem;
   transition: color .3s
 }
@@ -1870,6 +1880,7 @@ textarea:focus::placeholder {
   align-content: center
 }
 .hero__title {
+  font-family: Inter;
   max-width: 41.25rem;
   color: #0a0a0a;
   font-size: 3rem;
@@ -1900,6 +1911,7 @@ textarea:focus::placeholder {
   gap: 2rem
 }
 .description__text {
+  font-family: Inter;
   color: #0a0a0a;
   font-size: 1.75rem;
   font-weight: 500;
@@ -1969,6 +1981,7 @@ textarea:focus::placeholder {
   padding-left: 4rem
 }
 .statistic__value {
+  font-family: Inter;
   color: #0a0a0a;
   text-align: center;
   font-size: 2.5rem;
@@ -2022,10 +2035,12 @@ textarea:focus::placeholder {
   transition: width .3s
 }
 .course-areas-of-study__image {
-  max-width: 100%
+  max-width: 100%;
+  max-height: 31.25rem
 }
 .course-areas-of-study__image img {
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
   object-fit: cover
 }
@@ -2036,6 +2051,7 @@ textarea:focus::placeholder {
   left: 0;
   width: 100%;
   padding: 0 .9375rem;
+  font-family: Inter;
   text-align: center;
   color: #fff;
   font-size: 1.5rem;
@@ -2089,6 +2105,10 @@ textarea:focus::placeholder {
   transform: rotate(-90deg);
   transition: color .3s
 }
+.contact {
+  padding-left: .9375rem;
+  padding-right: .9375rem
+}
 .contact__big-container {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -2107,7 +2127,8 @@ textarea:focus::placeholder {
   gap: 2rem
 }
 .content-contact__bold-text {
-  color: #0a0a0a;
+  font-family: Inter;
+  color: #424242;
   font-size: 1.75rem;
   font-weight: 600;
   line-height: 1.1
@@ -2174,6 +2195,7 @@ textarea:focus::placeholder {
   width: 100%
 }
 .card-closest-groups__date {
+  font-family: Inter;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2189,6 +2211,7 @@ textarea:focus::placeholder {
   font-weight: 500
 }
 .card-closest-groups__name {
+  font-family: Inter;
   display: flex;
   flex-direction: column;
   row-gap: .5rem;
@@ -2338,6 +2361,7 @@ textarea:focus::placeholder {
   row-gap: 2rem
 }
 .about-hero__title {
+  font-family: Inter;
   color: #0a0a0a;
   font-size: 1.75rem;
   font-weight: 500;
@@ -2430,6 +2454,7 @@ textarea:focus::placeholder {
   margin-bottom: 2rem
 }
 .teachers__name {
+  font-family: Inter;
   color: #424242;
   font-size: 1.5rem;
   font-weight: 600;
@@ -2500,6 +2525,7 @@ textarea:focus::placeholder {
   width: 100%
 }
 .item-all-courses__title {
+  font-family: Inter;
   color: #0a0a0a;
   font-size: 1.25rem;
   font-weight: 600;
@@ -2670,12 +2696,6 @@ textarea:focus::placeholder {
     white-space: normal
   }
 }
-@media (max-width:25em) {
-  .item-about-us {
-    padding-left: 2rem;
-    padding-right: 2rem
-  }
-}
 @media (max-width:78.75em) {
   .hero__image img {
     -o-object-position: 65% 50%;
@@ -2688,7 +2708,10 @@ textarea:focus::placeholder {
 }
 @media (max-width:62.5em) {
   .our-partners__items {
-    grid-template-columns: repeat(2,1fr)
+    grid-template-columns: repeat(2,1fr);
+    -webkit-column-gap: 4rem;
+    -moz-column-gap: 4rem;
+    column-gap: 4rem
   }
   .our-partners__item {
     justify-self: center
@@ -2713,8 +2736,8 @@ textarea:focus::placeholder {
     column-gap: .9375rem
   }
   .hero__image img {
-    -o-object-position: 80% 50%;
-    object-position: 80% 50%
+    -o-object-position: 60% 50%;
+    object-position: 60% 50%
   }
   .hero__container {
     align-content: end;
@@ -2751,17 +2774,28 @@ textarea:focus::placeholder {
   }
 }
 @media (max-width:47.99875em) {
+  .header__box-social {
+    display: grid;
+    row-gap: 2rem
+  }
+  .menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%
+  }
   .menu__body {
     background-color: #fff;
     position: fixed;
     top: -100%;
     left: 0;
-    min-width: 100%;
-    min-height: 100%;
+    width: 100%;
+    height: 100%;
     z-index: 2;
     padding-top: 11.5rem;
     padding-right: 1rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: 6rem;
     padding-left: 1rem;
     display: flex;
     flex-direction: column;
@@ -2775,7 +2809,7 @@ textarea:focus::placeholder {
     content: "";
     position: fixed;
     z-index: 2;
-    top: -100%;
+    top: 0;
     left: 0;
     opacity: 0;
     width: 100%;
@@ -2850,6 +2884,7 @@ textarea:focus::placeholder {
   .spoller-menu__sub-list {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     gap: 1rem;
     padding: 1rem;
     border-radius: .75rem;
@@ -2907,6 +2942,9 @@ textarea:focus::placeholder {
     grid-template-columns: auto;
     row-gap: 4rem
   }
+  .hero__container {
+    padding-bottom: 15.625rem
+  }
   .hero__title {
     max-width: 34.375rem;
     font-size: 2.5rem
@@ -2926,7 +2964,7 @@ textarea:focus::placeholder {
     justify-content: center
   }
   .our-partners__link {
-    max-width: 9.375rem
+    max-width: 11.25rem
   }
   .about-hero__container {
     grid-template-columns: auto
@@ -2970,20 +3008,10 @@ textarea:focus::placeholder {
     text-align: center
   }
 }
-@media (max-width:41.875em) {
-  .hero__image img {
-    -o-object-position: 75% 50%;
-    object-position: 75% 50%
-  }
-}
 @media (max-width:37.5em) {
   .about-us__items {
     grid-template-columns: auto;
     gap: 2rem
-  }
-  .item-about-us {
-    padding-left: 4rem;
-    padding-right: 4rem
   }
   .areas-of-study__courses {
     grid-template-columns: auto;
@@ -2992,6 +3020,13 @@ textarea:focus::placeholder {
   .card-closest-groups__icon {
     flex: 0 0 4rem;
     max-width: 4rem
+  }
+  .testmonials__slider {
+    overflow: visible!important
+  }
+  .testmonials__button {
+    width: 100%;
+    text-align: center
   }
   .teachers__items {
     grid-template-columns: auto
@@ -3002,12 +3037,23 @@ textarea:focus::placeholder {
     max-width: 28.125rem
   }
 }
-@media (max-width:29.99875em) and (max-width:22.5em) {
-  .hero__title {
-    font-size: 1.5rem
-  }
-}
 @media (max-width:29.99875em) {
+  .menu__phone {
+    display: block;
+    color: #0a0a0a;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: uppercase
+  }
+  .hero__image img {
+    -o-object-position: 63% 50%;
+    object-position: 63% 50%
+  }
+  .course-areas-of-study__image {
+    max-height: 25rem
+  }
   .header-areas-of-study__top {
     flex-direction: column;
     row-gap: 2rem
@@ -3019,15 +3065,20 @@ textarea:focus::placeholder {
   .form-contact__top {
     grid-template-columns: auto
   }
-  .testmonials__button {
-    width: 100%;
-    text-align: center
-  }
   .our-partners__items {
-    grid-template-columns: auto
+    grid-template-columns: auto;
+    gap: 4rem
+  }
+  .our-partners__link {
+    max-width: 100%
   }
   .about-hero__btn {
     justify-self: center
+  }
+}
+@media (max-width:29.99875em) and (max-width:22.5em) {
+  .hero__title {
+    font-size: 1.5rem
   }
 }
 @media (max-width:22.5em) {
@@ -3345,13 +3396,12 @@ textarea:focus::placeholder {
     background-color: #cde5ac
   }
   .menu__link:hover {
-    color: #7fa941
-  }
-  .menu__link:hover::after {
-    width: 100%
+    color: #7fa941;
+    background-color: #ededed
   }
   .menu__sub-link:hover {
-    color: #7fa941
+    color: #7fa941;
+    background-color: #ededed
   }
   .social-header__link:hover {
     color: #7fa941
@@ -3397,16 +3447,16 @@ textarea:focus::placeholder {
     color: #7fa941
   }
   .card-closest-groups--line-green:hover {
-    border-left: 1rem solid #8cb54d
+    border-left: .5rem solid #8cb54d
   }
   .card-closest-groups--line-pink:hover {
-    border-left: 1rem solid #e4b0b0
+    border-left: .5rem solid #e4b0b0
   }
   .card-closest-groups--line-yellow:hover {
-    border-left: 1rem solid #efe2b3
+    border-left: .5rem solid #efe2b3
   }
   .card-closest-groups--line-blue:hover {
-    border-left: 1rem solid #b0b5e4
+    border-left: .5rem solid #b0b5e4
   }
   .swiper-button-disabled:hover {
     background-color: rgba(139,181,77,.7)
