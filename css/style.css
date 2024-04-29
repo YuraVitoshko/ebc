@@ -2785,7 +2785,8 @@ textarea:focus::placeholder {
   margin-bottom: 4rem
 }
 .item-details-course {
-  max-width: 48.125rem
+  max-width: 48.125rem;
+  padding-right: 1rem
 }
 .item-details-course__title {
   color: #3d3d3d;
@@ -2877,7 +2878,7 @@ textarea:focus::placeholder {
   width: 100%;
   cursor: pointer;
   text-align: left;
-  padding: .5rem 1rem;
+  padding: .5rem 2rem .5rem 1rem;
   position: relative;
   list-style: none
 }
