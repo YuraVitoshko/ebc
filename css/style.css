@@ -2864,7 +2864,9 @@ textarea:focus::placeholder {
   gap: 1rem
 }
 .item-answer-questions {
-  max-width: 48.125rem
+  border-radius: .75rem;
+  max-width: 48.125rem;
+  background-color: #f0f5eb
 }
 .item-answer-questions__title {
   border-radius: .75rem;
@@ -2916,22 +2918,17 @@ textarea:focus::placeholder {
   -webkit-transform: rotate(40deg);
   transform: rotate(40deg)
 }
-.item-answer-questions__item {
-  display: inline-flex;
-  gap: .75rem;
-  color: #616161;
-  line-height: 1.55;
-  padding-right: 1.25rem;
-  margin-right: 1rem
+.item-answer-questions__list {
+  padding-bottom: 1rem
 }
-.item-answer-questions__item::before {
-  content: "";
-  margin-top: .8125rem;
-  flex: 0 0 .1875rem;
-  width: .1875rem;
-  height: .1875rem;
-  border-radius: 50%;
-  background-color: #616161
+.item-answer-questions__item {
+  padding-left: 1rem;
+  padding-top: .75rem;
+  padding-right: 1.25rem;
+  margin-right: 1rem;
+  color: #616161;
+  font-size: 1rem;
+  line-height: 1.5
 }
 .adress {
   padding-top: 6rem;
