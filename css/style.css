@@ -1528,6 +1528,15 @@ textarea:focus::placeholder {
   border: .125rem solid #cde5ac;
   background-color: transparent
 }
+.button--grey {
+  background-color: #f0f5eb;
+  color: #8cb54d
+}
+.button--border-light {
+  border: .125rem solid #e0e0e0;
+  background-color: #fff;
+  transition: background-color .3s,border .3s,color .3s!important
+}
 .title {
   font-family: Inter;
   color: #0a0a0a;
@@ -2183,7 +2192,8 @@ textarea:focus::placeholder {
 }
 .areas-of-study__subtitle {
   color: #424242;
-  line-height: 1.55
+  line-height: 1.55;
+  max-width: 43.75rem
 }
 .areas-of-study__courses {
   display: grid;
@@ -2749,7 +2759,7 @@ textarea:focus::placeholder {
   font-family: Inter;
   color: #0a0a0a;
   font-size: 1.75rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.28
 }
 .about-hero__list {
@@ -2806,12 +2816,14 @@ textarea:focus::placeholder {
 .about-hero__subtitle {
   color: #0a0a0a;
   font-weight: 500;
-  line-height: 1.44;
-  text-transform: uppercase
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-size: 1rem
 }
 .about-hero__value {
   color: #616161;
-  line-height: 1.55
+  line-height: 1.42;
+  font-size: .875rem
 }
 .about-hero__image {
   max-width: 36.875rem;
@@ -3608,8 +3620,6 @@ textarea:focus::placeholder {
     -o-object-position: 65% 50%;
     object-position: 65% 50%
   }
-}
-@media (max-width:68.75em) {
   .about-hero__buttons {
     flex-direction: column
   }
@@ -3656,6 +3666,59 @@ textarea:focus::placeholder {
   }
   .our-partners__items {
     grid-template-columns: repeat(3,1fr)
+  }
+  .about-hero__container {
+    grid-template-columns: auto
+  }
+  .about-hero__content {
+    order: 2
+  }
+  .about-hero__content._watcher-view {
+    -webkit-animation: about-hero__content 1.2s ease .2s forwards;
+    animation: about-hero__content 1.2s ease .2s forwards;
+    -webkit-transform: translate(0,10%);
+    transform: translate(0,10%)
+  }
+  @-webkit-keyframes about-hero__content {
+    to {
+      -webkit-transform: translate(0,0);
+      transform: translate(0,0);
+      opacity: 1
+    }
+  }
+  @keyframes about-hero__content {
+    to {
+      -webkit-transform: translate(0,0);
+      transform: translate(0,0);
+      opacity: 1
+    }
+  }
+  .about-hero__buttons {
+    flex-direction: row
+  }
+  .about-hero__image {
+    max-width: 100%;
+    order: 1
+  }
+  .about-hero__image._watcher-view {
+    -webkit-animation: about-hero__image 1.2s ease .2s forwards;
+    animation: about-hero__image 1.2s ease .2s forwards;
+    -webkit-transform: translate(0,10%);
+    transform: translate(0,10%)
+  }
+  @-webkit-keyframes about-hero__image {
+    to {
+      -webkit-transform: translate(0,0);
+      transform: translate(0,0);
+      opacity: 1
+    }
+  }
+  @keyframes about-hero__image {
+    to {
+      -webkit-transform: translate(0,0);
+      transform: translate(0,0);
+      opacity: 1
+    }
   }
   .teachers__items {
     grid-template-columns: repeat(2,1fr)
@@ -3799,6 +3862,9 @@ textarea:focus::placeholder {
     line-height: 1.5;
     text-transform: uppercase
   }
+  .select {
+    display: none
+  }
   .icon-menu {
     display: block;
     position: relative;
@@ -3896,6 +3962,9 @@ textarea:focus::placeholder {
       opacity: 1
     }
   }
+  .areas-of-study__subtitle {
+    max-width: 100%
+  }
   .form-contact__btn {
     justify-self: center;
     width: 100%;
@@ -3910,55 +3979,8 @@ textarea:focus::placeholder {
   .our-partners__link {
     max-width: 11.25rem
   }
-  .about-hero__container {
-    grid-template-columns: auto
-  }
-  .about-hero__content {
-    order: 2
-  }
-  .about-hero__content._watcher-view {
-    -webkit-animation: about-hero__content 1.2s ease .2s forwards;
-    animation: about-hero__content 1.2s ease .2s forwards;
-    -webkit-transform: translate(0,10%);
-    transform: translate(0,10%)
-  }
-  @-webkit-keyframes about-hero__content {
-    to {
-      -webkit-transform: translate(0,0);
-      transform: translate(0,0);
-      opacity: 1
-    }
-  }
-  @keyframes about-hero__content {
-    to {
-      -webkit-transform: translate(0,0);
-      transform: translate(0,0);
-      opacity: 1
-    }
-  }
-  .about-hero__image {
-    max-width: 100%;
-    order: 1
-  }
-  .about-hero__image._watcher-view {
-    -webkit-animation: about-hero__image 1.2s ease .2s forwards;
-    animation: about-hero__image 1.2s ease .2s forwards;
-    -webkit-transform: translate(0,10%);
-    transform: translate(0,10%)
-  }
-  @-webkit-keyframes about-hero__image {
-    to {
-      -webkit-transform: translate(0,0);
-      transform: translate(0,0);
-      opacity: 1
-    }
-  }
-  @keyframes about-hero__image {
-    to {
-      -webkit-transform: translate(0,0);
-      transform: translate(0,0);
-      opacity: 1
-    }
+  .about-hero__buttons {
+    flex-direction: column
   }
   .teachers__items {
     row-gap: 2rem
@@ -4090,6 +4112,9 @@ textarea:focus::placeholder {
   }
   .our-partners__link {
     max-width: 100%
+  }
+  .about-hero__box {
+    grid-template-columns: auto
   }
   .teach-to-do__items {
     grid-template-columns: repeat(auto-fit,minmax(9.75rem,1fr))
@@ -4455,6 +4480,9 @@ textarea:focus::placeholder {
   }
   .button--border:hover {
     background-color: #cde5ac
+  }
+  .button--border-light:hover {
+    background-color: #e0e0e0
   }
   .go-to-up:hover {
     background-color: #c2c2c2
